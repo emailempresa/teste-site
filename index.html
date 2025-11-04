@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MecDani Hamburgueria</title>
+
+  <!-- mantém seu arquivo CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ícone -->
+  <link rel="icon" href="Imagem/favicon.png" type="image/png" />
+
+  <!-- Fontes: mantive Poppins (sua) e adicionei Montserrat para títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (apenas para pequenos ícones decorativos, opcional) -->
+  <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <!-- Logo à esquerda -->
+      <div class="logo"><span class="logo-marron">Mec</span><span class="logo-branco">Dani</span></div>
+
+      <!-- Navegação / links à direita -->
+      <nav class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#unidade">Unidade</a></li>
+          <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão de pedido à direita -->
+      <a href="#pedido" class="btn-pedido">Faça seu pedido</a>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner-bg bg-azul" aria-label="Banner principal">
+    <div class="banner-overlay container">
+      <div class="banner-text">
+        <h1 class="banner-title">
+          <span class="linha1">O SIMPLES</span>
+          <span class="linha2">DA MELHOR</span>
+          <span class="linha3">FORMA</span>
+        </h1>
+        <p class="banner-sub">Hambúrguer artesanal, feito com ingredientes selecionados.</p>
+        <a href="#pedido" class="btn-banner">FAZER PEDIDO</a>
+      </div>
+
+      <div class="banner-image" aria-hidden="true">
+        <!-- imagem decorativa (substituir por local se desejar) -->
+        <img
+          src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f6ea2a6f6ad4a08f2e1e08b1b4a2f8e"
+          alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO (fundo preto) -->
+  <section class="cardapio fade-in bg-preto" id="cardapio" aria-labelledby="cardapio-title">
+    <div class="container-secoes">
+      <h2 id="cardapio-title">🍔 Variedades</h2>
+      <p class="subtext">Fotos reais dos nossos sabores mais pedidos — clique para pedir pelo WhatsApp.</p>
+
+      <div class="card-grid" id="product-grid">
+  <!-- 1 - Molhos (local) -->
+  <div class="card" data-id="p1">
+    <div class="media"><img src="Imagem/hamburgmolhos.jpg" alt="Molhos"></div>
+    <div class="card-info">
+      <h3>Molhos</h3>
+      <p>Molhos artesanais da casa.</p>
+      <div class="meta">
+        <span class="preco">R$ 2,50</span>
+        <button class="add-btn" data-id="p1" data-name="Molhos" data-price="2.50" data-image="Imagem/hamburgmolhos.jpg">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 - X-Bacon (local) -->
+  <div class="card" data-id="p2">
+    <div class="media"><img src="Imagem/bacon.jpg" alt="X-Bacon"></div>
+    <div class="card-info">
+      <h3>X-Bacon</h3>
+      <p>Bacon crocante e cheddar derretido.</p>
+      <div class="meta">
+        <span class="preco">R$ 24,90</span>
+        <button class="add-btn" data-id="p2" data-name="X-Bacon" data-price="24.90" data-image="Imagem/bacon.jpg">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 - X-Egg (local) -->
+  <div class="card" data-id="p3">
+    <div class="media"><img src="Imagem/xegg.jpg" alt="X-Egg"></div>
+    <div class="card-info">
+      <h3>X-Egg</h3>
+      <p>Clássico com ovo frito e molho especial.</p>
+      <div class="meta">
+        <span class="preco">R$ 25,90</span>
+        <button class="add-btn" data-id="p3" data-name="X-Egg" data-price="25.90" data-image="Imagem/xegg.jpg">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 - X-Tudo (local) -->
+  <div class="card" data-id="p4">
+    <div class="media"><img src="Imagem/hamburg.jpg" alt="X-Tudo"></div>
+    <div class="card-info">
+      <h3>X-Tudo</h3>
+      <p>Todos os complementos por um preço especial.</p>
+      <div class="meta">
+        <span class="preco">R$ 29,90</span>
+        <button class="add-btn" data-id="p4" data-name="X-Tudo" data-price="29.90" data-image="Imagem/hamburg.jpg">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 - Batatas (local) -->
+  <div class="card" data-id="p5">
+    <div class="media"><img src="Imagem/batata1.jpg" alt="Batatas"></div>
+    <div class="card-info">
+      <h3>Batatas</h3>
+      <p>Porção crocante e bem temperada.</p>
+      <div class="meta">
+        <span class="preco">R$ 12,90</span>
+        <button class="add-btn" data-id="p5" data-name="Batatas" data-price="12.90" data-image="Imagem/batata1.jpg">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 - X-Salada (externa - imagem coerente) -->
+  <div class="card" data-id="p6">
+    <div class="media"><img src="https://images.unsplash.com/photo-1541544182141-5f8b2b7f6d53?q=80&w=1200&auto=format&fit=crop" alt="X-Salada"></div>
+    <div class="card-info">
+      <h3>X-Salada</h3>
+      <p>Alface, tomate, queijo e molho especial.</p>
+      <div class="meta">
+        <span class="preco">R$ 22,50</span>
+        <button class="add-btn" data-id="p6" data-name="X-Salada" data-price="22.50" data-image="https://images.unsplash.com/photo-1541544182141-5f8b2b7f6d53?q=80&w=1200&auto=format&fit=crop">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 - Frango Crocante -->
+  <div class="card" data-id="p7">
+    <div class="media"><img src="https://images.unsplash.com/photo-1516684669134-de6f3d0d0ee0?q=80&w=1200&auto=format&fit=crop" alt="Frango Crocante"></div>
+    <div class="card-info">
+      <h3>Frango Crocante</h3>
+      <p>Peito de frango empanado com molho especial.</p>
+      <div class="meta">
+        <span class="preco">R$ 23,90</span>
+        <button class="add-btn" data-id="p7" data-name="Frango Crocante" data-price="23.90" data-image="https://images.unsplash.com/photo-1516684669134-de6f3d0d0ee0?q=80&w=1200&auto=format&fit=crop">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 - Veggie -->
+  <div class="card" data-id="p8">
+    <div class="media"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Veggie"></div>
+    <div class="card-info">
+      <h3>Veggie</h3>
+      <p>Hambúrguer vegetal, opção leve e saborosa.</p>
+      <div class="meta">
+        <span class="preco">R$ 21,50</span>
+        <button class="add-btn" data-id="p8" data-name="Veggie" data-price="21.50" data-image="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 - Duplo Cheddar -->
+  <div class="card" data-id="p9">
+    <div class="media"><img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1200&auto=format&fit=crop" alt="Duplo Cheddar"></div>
+    <div class="card-info">
+      <h3>Duplo Cheddar</h3>
+      <p>Dois hambúrgueres e muito cheddar.</p>
+      <div class="meta">
+        <span class="preco">R$ 34,90</span>
+        <button class="add-btn" data-id="p9" data-name="Duplo Cheddar" data-price="34.90" data-image="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1200&auto=format&fit=crop">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 - Milkshake -->
+  <div class="card" data-id="p10">
+    <div class="media"><img src="https://images.unsplash.com/photo-1571091718767-18a0b1f5a0f6?q=80&w=1200&auto=format&fit=crop" alt="Milkshake"></div>
+    <div class="card-info">
+      <h3>Milkshake</h3>
+      <p>Milkshake cremoso - escolha o sabor no pedido.</p>
+      <div class="meta">
+        <span class="preco">R$ 9,90</span>
+        <button class="add-btn" data-id="p10" data-name="Milkshake" data-price="9.90" data-image="https://images.unsplash.com/photo-1571091718767-18a0b1f5a0f6?q=80&w=1200&auto=format&fit=crop">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- MONTE SEU BURGER (fundo branco) -->
+  <section class="monte-burger fade-in bg-branco" aria-labelledby="monte-title">
+    <div class="container-secoes">
+      <h2 id="monte-title">🛠️ Monte o Seu Burger</h2>
+      <div class="burger-opcoes">
+        <div class="opcao">
+          <h3>Pão</h3>
+          <p>Tradicional • Brioche • Integral</p>
+        </div>
+        <div class="opcao">
+          <h3>Carne</h3>
+          <p>Bovina • Frango • Veggie</p>
+        </div>
+        <div class="opcao">
+          <h3>Complementos</h3>
+          <p>Bacon • Cheddar • Ovo • Salada</p>
+        </div>
+        <div class="opcao">
+          <h3>Molhos</h3>
+          <p>Maionese da casa • Barbecue • Picante</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (fundo azul) -->
+  <section class="depoimentos fade-in bg-azul" aria-labelledby="depoimentos-title">
+    <div class="container-secoes">
+      <h2 id="depoimentos-title">💬 O que dizem sobre nós</h2>
+      <div class="depoimento-grid">
+        <div class="depoimento">
+          <p>"Melhor X-Tudo da cidade! Atendimento top e hambúrguer sempre fresquinho."</p>
+          <span>— João, cliente fiel</span>
+        </div>
+        <div class="depoimento">
+          <p>"Simples, direto e delicioso. MecDani virou parada obrigatória toda semana."</p>
+          <span>— Carla, moradora de Nova Lima</span>
+        </div>
+        <div class="depoimento">
+          <p>"O ambiente é incrível e o sabor dos hambúrgueres é inesquecível!"</p>
+          <span>— Lucas, fã de hambúrguer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS (fundo preto) -->
+  <section class="diferenciais fade-in bg-preto" aria-labelledby="diferenciais-title">
+    <div class="container-secoes">
+      <h2 id="diferenciais-title">🔥 Por que escolher a MecDani?</h2>
+      <div class="diferenciais-grid">
+        <div class="diferencial">✔ Ingredientes frescos e selecionados</div>
+        <div class="diferencial">✔ Hambúrgueres feitos na hora</div>
+        <div class="diferencial">✔ Atendimento rápido e acolhedor</div>
+        <div class="diferencial">✔ Preço justo e sabor marcante</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOÇÕES (fundo branco) -->
+  <section class="promocoes fade-in bg-branco" aria-labelledby="promocoes-title">
+    <div class="container-secoes">
+      <h2 id="promocoes-title">🎉 Promoções da Semana</h2>
+      <div class="promo-grid">
+        <div class="promo">
+          <img src="Imagem/Gemini_Generated_Image_xnp08txnp08txnp0.png" alt="Combo X-Tudo">
+          <h3>Combo X-Tudo + Refri</h3>
+          <p class="promo-price">Por apenas <strong>R$ 24,90</strong></p>
+          <a class="cta-small" href="https://wa.me/5531999990000?text=Quero%20o%20Combo">Peça no WhatsApp</a>
+        </div>
+
+        <div class="promo">
+          <img
+            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a8b7c6d5e4f3a2b1c0d"
+            alt="Batata + Molho">
+          <h3>Batata + Molho Especial</h3>
+          <p class="promo-price">Grátis na compra de 2 burgers</p>
+          <a class="cta-small" href="https://wa.me/5531999990000?text=Quero%20a%20promo%C3%A7%C3%A3o">Peça no
+            WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- UNIDADE -->
+<section class="unidade fade-in bg-azul" id="unidade">
+  <h2 class="unidade-titulo">📍 Onde Estamos</h2>
+  <div class="unidade-container">
+
+    <!-- MAPA -->
+    <div class="unidade-mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!4v1730092123!6m8!1m7!1sYYm3ou7pPuuxD8IvTvfD4w!2m2!1d-19.9889474!2d-43.8469316!3f236.81!4f76.83!5f0.7820865974627469" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- INFO -->
+    <div class="unidade-info">
+      <h3>MecDani Hamburgueria</h3>
+      <p><strong>Endereço:</strong><br>Av. José Bernardo de Barros - Cascalho, Nova Lima - MG, 34000-000</p>
+      <p><strong>Horário de funcionamento:</strong><br>Terça a Sexta: <b>18h às 00h</b><br>Sábado e Domingo: <b>17h às 01h</b></p>
+      <p><strong>Contato:</strong><br>📲 WhatsApp: (31) 99999-0000<br>📸 Instagram: <a href="https://instagram.com/mecdani.burger" target="_blank">@mecdani.burger</a></p>
+      <a href="https://wa.me/5531999990000?text=Quero%20fazer%20um%20pedido%20na%20MecDani!" target="_blank" class="btn-banner" style="margin-top:20px;display:inline-block;">FAZER PEDIDO</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- QUEM SOMOS (fundo preto) -->
+  <section class="quem-somos fade-in bg-preto" id="quem-somos" aria-labelledby="quem-title">
+    <div class="container-secoes quem-somos-container">
+      <div class="quem-somos-texto">
+        <h2 id="quem-title">🥇 Quem Somos</h2>
+        <p>A MecDani nasceu da paixão por hambúrgueres de verdade. Fundada em Nova Lima por dois amigos que acreditam
+          que o simples, quando bem feito, pode ser extraordinário.</p>
+        <p>Cada hambúrguer é feito com carinho, do pão artesanal à carne selecionada. Somos mais que uma hamburgueria —
+          somos um ponto de encontro, uma experiência, um sabor que fica na memória.</p>
+        <p>Venha conhecer a MecDani e descubra o sabor da simplicidade feita com excelência.</p>
+        <a class="btn-ghost" href="#cardapio">Ver cardápio</a>
+      </div>
+
+      <div class="quem-somos-imagem">
+        <img src="Imagem/mcdani.png" alt="Equipe MecDani ou ambiente da hamburgueria">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL (fundo azul) -->
+  <section class="cta-final fade-in bg-azul" id="pedido">
+    <div class="container-secoes">
+      <h2>🍔 Pronto pra matar a fome?</h2>
+      <a href="https://wa.me/5531999990000?text=Quero%20fazer%20um%20pedido%20na%20MecDani!"
+        class="btn-banner large">FAZER PEDIDO AGORA</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer bg-branco" id="contato">
+    <div class="footer-container container-secoes">
+      <div class="footer-sobre">
+        <h3>MecDani 🍔</h3>
+        <p>Acreditamos que vender hambúrguer é mais do que servir comida — é entregar momentos. Cada receita da MecDani
+          carrega nossa paixão pela simplicidade bem feita, com ingredientes frescos e sabor marcante.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Acessos Rápidos</h4>
+        <ul>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#pedido">Fazer Pedido</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Contatos</h4>
+        <ul>
+          <li><a href="https://instagram.com/mecdani.burger" target="_blank">📸 Instagram: @mecdani.burger</a></li>
+          <li><a href="https://www.ifood.com.br" target="_blank">🍔 iFood: MecDani Hamburgueria</a></li>
+          <li><a href="https://wa.me/5531999990000" target="_blank">📲 WhatsApp: (31) 99999-0000</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // ===== Banner fade-in =====
+    document.addEventListener("DOMContentLoaded", () => {
+      const bannerTitle = document.querySelector(".banner-title");
+      const btnBanner = document.querySelector(".btn-banner");
+      if (bannerTitle && btnBanner) {
+        bannerTitle.style.opacity = 0;
+        bannerTitle.style.transform = "translateY(50px)";
+        btnBanner.style.opacity = 0;
+        btnBanner.style.transform = "translateY(50px)";
+        setTimeout(() => {
+          bannerTitle.style.transition = "all 0.9s cubic-bezier(.2,.9,.3,1)";
+          btnBanner.style.transition = "all 0.9s cubic-bezier(.2,.9,.3,1)";
+          bannerTitle.style.opacity = 1;
+          bannerTitle.style.transform = "translateY(0)";
+          btnBanner.style.opacity = 1;
+          btnBanner.style.transform = "translateY(0)";
+        }, 200);
+      }
+    });
+
+    // ===== Topbar esconde/mostra ao scroll =====
+    let lastScrollTop = 0;
+    const header = document.querySelector(".header");
+    window.addEventListener("scroll", () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.style.top = "-95px";
+      } else {
+        header.style.top = "0";
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // ===== Fade-in das seções (IntersectionObserver) =====
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOptions = { threshold: 0.08, rootMargin: "0px 0px -30px 0px" };
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(f => appearOnScroll.observe(f));
+
+    
+  </script>
+
+  <script>
+/* ======= CARRINHO ======= */
+const IFOOD_LINK = "https://www.ifood.com.br/delivery/nova-lima-mg/mec-dani-cascalho/1562b43f-bb60-4945-901b-2dc0b6199264";
+const WHATSAPP_NUMBER = "5531999990000";
+const STORAGE_KEY = "mecdani_cart_v1";
+
+let cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+const cartButton = document.getElementById("cart-button");
+const cartCount = document.getElementById("cart-count");
+const cartModal = document.getElementById("cart-modal");
+const cartClose = document.getElementById("cart-close");
+const cartItemsEl = document.getElementById("cart-items");
+const cartSubtotalEl = document.getElementById("cart-subtotal");
+const cartFeeEl = document.getElementById("cart-fee");
+const cartTotalEl = document.getElementById("cart-total");
+const whatsappOrderBtn = document.getElementById("whatsapp-order");
+const ifoodOrderBtn = document.getElementById("ifood-order");
+const clearCartBtn = document.getElementById("clear-cart");
+
+function formatBRL(value) {
+  return "R$ " + value.toFixed(2).replace(".", ",");
+}
+
+function saveCart() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  renderCart();
+}
+
+function updateCartCount() {
+  const qty = cart.reduce((s, i) => s + i.qty, 0);
+  cartCount.textContent = qty;
+}
+
+function calculateTotals() {
+  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const fee = subtotal > 0 ? Math.max(2.5, subtotal * 0.03) : 0;
+  const total = subtotal + fee;
+  return { subtotal, fee, total };
+}
+
+function renderCart() {
+  cartItemsEl.innerHTML = "";
+  if (cart.length === 0) {
+    cartItemsEl.innerHTML = "<p style='opacity:.85'>Seu carrinho está vazio.</p>";
+  } else {
+    cart.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "cart-item";
+      row.innerHTML = `
+        <div class="ci-left">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="ci-mid">
+          <strong>${item.name}</strong>
+          <div class="ci-qty">
+            <button class="qty-minus" data-id="${item.id}">−</button>
+            <span>${item.qty}</span>
+            <button class="qty-plus" data-id="${item.id}">+</button>
+          </div>
+        </div>
+        <div class="ci-right">
+          <div class="ci-price">${formatBRL(item.price * item.qty)}</div>
+          <button class="remove-item" data-id="${item.id}">Remover</button>
+        </div>
+      `;
+      cartItemsEl.appendChild(row);
+    });
+  }
+
+  const { subtotal, fee, total } = calculateTotals();
+  cartSubtotalEl.textContent = formatBRL(subtotal);
+  cartFeeEl.textContent = formatBRL(fee);
+  cartTotalEl.textContent = formatBRL(total);
+  updateCartCount();
+}
+
+/* Add produto via botões .add-btn */
+document.querySelectorAll(".add-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+    const name = btn.dataset.name;
+    const price = parseFloat(btn.dataset.price || btn.getAttribute('data-price'));
+    const image = btn.dataset.image;
+    const existing = cart.find(i => i.id === id);
+    if (existing) existing.qty++;
+    else cart.push({ id, name, price: Number(price), qty: 1, image });
+    saveCart();
+    openCart();
+  });
+});
+
+/* delegação para + - remover */
+cartItemsEl.addEventListener("click", (e) => {
+  const t = e.target;
+  if (t.classList.contains("qty-plus")) changeQty(t.dataset.id, 1);
+  if (t.classList.contains("qty-minus")) changeQty(t.dataset.id, -1);
+  if (t.classList.contains("remove-item")) removeItem(t.dataset.id);
+});
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeItem(id);
+  else saveCart();
+}
+
+function removeItem(id) {
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+}
+
+/* abrir/fechar modal */
+function openCart() {
+  cartModal.setAttribute("aria-hidden", "false");
+  cartModal.classList.add("open");
+}
+function closeCart() {
+  cartModal.setAttribute("aria-hidden", "true");
+  cartModal.classList.remove("open");
+}
+cartButton.addEventListener("click", openCart);
+if (cartClose) cartClose.addEventListener("click", closeCart);
+cartModal.addEventListener("click", e => { if (e.target === cartModal) closeCart(); });
+
+clearCartBtn.addEventListener("click", () => {
+  if (!confirm("Deseja esvaziar o carrinho?")) return;
+  cart = []; saveCart();
+});
+
+/* Whatsapp order */
+whatsappOrderBtn.addEventListener("click", () => {
+  if (cart.length === 0) { alert("Seu carrinho está vazio."); return; }
+  const { subtotal, fee, total } = calculateTotals();
+  let text = `Olá, quero fazer este pedido na MecDani:%0A`;
+  cart.forEach(i => {
+    text += `${i.qty}x ${i.name} - R$ ${(i.price * i.qty).toFixed(2).replace('.',',')}%0A`;
+  });
+  text += `%0ASubtotal: R$ ${subtotal.toFixed(2).replace('.',',')}%0ATaxa: R$ ${fee.toFixed(2).replace('.',',')}%0ATotal: R$ ${total.toFixed(2).replace('.',',')}%0A%0AEndereço: (coloque seu endereço)%0A`;
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  window.open(waUrl, "_blank");
+});
+
+/* iFood order */
+ifoodOrderBtn.addEventListener("click", () => {
+  if (cart.length === 0) {
+    if (!confirm("Seu carrinho está vazio. Deseja abrir o iFood mesmo assim?")) return;
+  }
+  window.open(IFOOD_LINK, "_blank");
+});
+
+/* init */
+renderCart();
+updateCartCount();
+</script>
+
+
+  <!-- CART UI: botão flutuante e modal -->
+<button id="cart-button" aria-label="Abrir carrinho">🛒 <span id="cart-count">0</span></button>
+
+<div id="cart-modal" aria-hidden="true">
+  <div class="cart-panel">
+    <button id="cart-close" aria-label="Fechar carrinho">✕</button>
+    <h3>Seu pedido</h3>
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row"><span>Subtotal:</span><span id="cart-subtotal">R$ 0,00</span></div>
+      <div class="summary-row"><span>Taxa (estimada):</span><span id="cart-fee">R$ 0,00</span></div>
+      <div class="summary-row total"><span>Total:</span><span id="cart-total">R$ 0,00</span></div>
+    </div>
+
+    <div class="cart-actions">
+      <button id="whatsapp-order" class="btn-banner">Pedir pelo WhatsApp</button>
+      <button id="ifood-order" class="btn-banner" style="background:#f8b400;color:#000">Finalizar no iFood</button>
+      <button id="clear-cart" class="btn-ghost" style="margin-top:10px">Esvaziar carrinho</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
